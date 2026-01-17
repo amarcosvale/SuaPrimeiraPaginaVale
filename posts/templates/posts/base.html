@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Blog{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: darkblue; }
+        nav a { margin-right: 10px; text-decoration: none; color: darkgreen; }
+        hr { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Blog</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'create_author' %}">Criar Autor</a> |
+            <a href="{% url 'create_category' %}">Criar Categoria</a> |
+            <a href="{% url 'create_post' %}">Criar Post</a> |
+            <a href="{% url 'search_post' %}">Buscar</a>
+        </nav>
+        <hr>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
